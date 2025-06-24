@@ -10,6 +10,7 @@
             --text-color: #333333;
             --bg-color: #ffffff;
             --border-color: #e0e0e0;
+            --highlight-bg: rgba(160, 32, 80, 0.1);
         }
         @media (prefers-color-scheme: dark) {
             :root {
@@ -17,6 +18,7 @@
                 --text-color: #f1f1f1;
                 --bg-color: #121212;
                 --border-color: #333333;
+                --highlight-bg: rgba(255, 117, 151, 0.1);
             }
         }
         body {
@@ -69,7 +71,7 @@
             color: var(--primary-color);
         }
         .highlight-box {
-            background-color: rgba(160, 32, 80, 0.1);
+            background-color: var(--highlight-bg);
             padding: 15px;
             border-radius: 8px;
             margin: 25px 0;
@@ -82,6 +84,40 @@
             font-size: 0.9rem;
             color: #666;
         }
+        .facebook-deletion {
+            background-color: var(--highlight-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .section-number {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .facebook-id-example {
+            background-color: rgba(0,0,0,0.05);
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: monospace;
+        }
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+        }
+        .contact-icon {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
     </style>
 </head>
 <body>
@@ -90,6 +126,7 @@
 
     <div class="highlight-box">
         <p>This policy explains how Megenagna Dating App ("we", "us", or "our") collects, uses, and protects your personal information. By using our services, you agree to this policy.</p>
+        <p><strong>Data Deletion URL:</strong> <a href="#" id="current-url">This page</a></p>
     </div>
 
     <h2>1. Information We Collect</h2>
@@ -136,7 +173,7 @@
 
     <h3>3.2 With Service Providers</h3>
     <ul>
-        <li><strong>Cloud services:</strong> Google Cloud for data storage</li>
+        <li><strong>Cloud services:</strong> AWS for data storage</li>
         <li><strong>Analytics:</strong> Firebase for usage statistics</li>
         <li><strong>Payments:</strong> Stripe for subscription processing</li>
     </ul>
@@ -159,6 +196,7 @@
         <li>View and update your profile information in the app</li>
         <li>Download your data through account settings</li>
         <li>Delete your account permanently</li>
+        <li><strong>Facebook-Specific Deletion:</strong> Users who registered via Facebook may request data deletion per Section 11</li>
     </ul>
 
     <h3>5.2 Communication Preferences</h3>
@@ -172,6 +210,7 @@
         <li><strong>Active accounts:</strong> Data retained until deletion</li>
         <li><strong>Inactive accounts:</strong> Deleted after 24 months of inactivity</li>
         <li><strong>Messages:</strong> Deleted when either user deletes their account</li>
+        <li><strong>Facebook Data Deletion Requests:</strong> Fulfilled within 30 days regardless of account status</li>
     </ul>
 
     <h2>7. International Transfers</h2>
@@ -184,7 +223,53 @@
     <p>We will notify users of significant changes through the app or email. Continued use after changes constitutes acceptance.</p>
 
     <h2>10. Contact Us</h2>
-    <p>For privacy concerns or data requests, please contact us through the Help Center in your profile settings.</p>
+    <p>For privacy concerns or data requests, please contact us through:</p>
+    <div class="contact-method">
+        <div class="contact-icon">📧</div>
+        <div>Email: privacy@megenagna.com</div>
+    </div>
+    <div class="contact-method">
+        <div class="contact-icon">📱</div>
+        <div>In-app Help Center</div>
+    </div>
+    <p>For Facebook data deletion requests specifically, please follow instructions in Section 11.</p>
+
+    <!-- NEW SECTION: Facebook Data Deletion Instructions -->
+    <h2>11. Facebook Data Deletion Instructions</h2>
+    <div class="facebook-deletion">
+        <p>If you registered using Facebook Login and wish to delete your data:</p>
+        
+        <h3>How to request deletion:</h3>
+        <ul>
+            <li>Email us at <strong>privacy@megenagna.com</strong> with subject: "Facebook Data Deletion Request"</li>
+            <li>Include your Facebook ID (found in your Facebook profile URL)</li>
+            <li>Example Facebook ID format:
+                <div class="facebook-id-example">https://www.facebook.com/profile.php?id=<strong>YOUR_FACEBOOK_ID</strong></div>
+            </li>
+        </ul>
+        
+        <h3>What we delete:</h3>
+        <ul>
+            <li>All personal data collected via Facebook Login</li>
+            <li>Profile information</li>
+            <li>Usage data linked to your Facebook ID</li>
+            <li>Connection history</li>
+        </ul>
+        
+        <h3>Processing timeline:</h3>
+        <ul>
+            <li>Requests processed within <strong>30 days</strong></li>
+            <li>Confirmation email sent upon completion</li>
+            <li>Backup data permanently erased within 90 days</li>
+        </ul>
+        
+        <h3>Alternative methods:</h3>
+        <ul>
+            <li>Delete your entire account in-app: <br>
+                <code>Profile → Settings → Delete Account</code>
+            </li>
+        </ul>
+    </div>
 
     <div class="legal-footer">
         <p>© 2025 Megenagna Dating App. All rights reserved.</p>
@@ -197,6 +282,23 @@
             year: 'numeric',
             month: 'long',
             day: 'numeric'
+        });
+        
+        // Set current URL
+        document.getElementById('current-url').textContent = window.location.href;
+        document.getElementById('current-url').href = window.location.href;
+        
+        // Highlight current section in TOC
+        document.querySelectorAll('h2[id]').forEach(section => {
+            section.onclick = () => {
+                document.querySelectorAll('h2').forEach(h => h.style.borderLeft = 'none');
+                section.style.borderLeft = `4px solid ${getComputedStyle(document.documentElement).getPropertyValue('--primary-color')}`;
+                section.style.paddingLeft = '10px';
+                setTimeout(() => {
+                    section.style.borderLeft = 'none';
+                    section.style.paddingLeft = '0';
+                }, 2000);
+            };
         });
     </script>
 </body>
