@@ -1,65 +1,470 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Support - Megenagna App</title>
-  <style>
-    :root {
-      --primary-color: #A02050;
-      --bg-color: #ffffff;
-      --text-color: #333333;
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg-color: #121212;
-        --text-color: #f1f1f1;
-      }
-    }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      padding: 40px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    h1 {
-      color: var(--primary-color);
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-    }
-
-    strong {
-      color: var(--primary-color);
-    }
-
-    a {
-      color: var(--primary-color);
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Megenagna Dating App - Help & Support</title>
+    <style>
+        :root {
+            --primary-color: #FF5864;
+            --primary-light: rgba(255, 88, 100, 0.1);
+            --primary-dark: #e04a55;
+            --text-color: #333333;
+            --text-secondary: #666666;
+            --bg-color: #ffffff;
+            --card-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --highlight-bg: rgba(255, 88, 100, 0.08);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #FF5864;
+                --primary-light: rgba(255, 88, 100, 0.15);
+                --text-color: #f1f1f1;
+                --text-secondary: #aaaaaa;
+                --bg-color: #121212;
+                --card-bg: #1e1e1e;
+                --border-color: #333333;
+                --highlight-bg: rgba(255, 88, 100, 0.12);
+            }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-light);
+            font-weight: 600;
+        }
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 1.8rem;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+        .last-updated {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 2rem;
+            display: block;
+            font-size: 1rem;
+            text-align: center;
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+        strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .welcome-section {
+            background: linear-gradient(135deg, var(--highlight-bg) 0%, rgba(255, 88, 100, 0.05) 100%);
+            padding: 30px;
+            border-radius: 16px;
+            margin: 30px 0;
+            text-align: center;
+            border: 1px solid var(--primary-light);
+        }
+        .welcome-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        .welcome-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--text-color);
+            margin-bottom: 15px;
+            margin-top: 30px;
+        }
+        .faq-item {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            border: 1px solid var(--border-color);
+        }
+        .question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .answer {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .quick-actions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .quick-action-button {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            text-decoration: none;
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .quick-action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 88, 100, 0.15);
+        }
+        .action-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        .action-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+        .tips-container {
+            background-color: var(--highlight-bg);
+            padding: 25px;
+            border-radius: 16px;
+            margin: 25px 0;
+            border-left: 4px solid var(--primary-color);
+        }
+        .tip-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 12px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+        }
+        .tip-icon {
+            margin-right: 15px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        .tip-text {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        .legal-links {
+            margin: 30px 0;
+        }
+        .legal-link {
+            display: block;
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+        .legal-link:hover {
+            background-color: var(--highlight-bg);
+        }
+        .legal-link-text {
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        .contact-section {
+            background: linear-gradient(135deg, var(--highlight-bg) 0%, rgba(255, 88, 100, 0.08) 100%);
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        .contact-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        .contact-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 15px 0;
+            transition: background-color 0.2s ease;
+        }
+        .contact-button:hover {
+            background-color: var(--primary-dark);
+        }
+        .button-icon {
+            margin-right: 8px;
+        }
+        .app-info {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .app-info-text {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .app-version {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .app-copyright {
+            font-size: 0.8rem;
+        }
+        .response-time {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-  <h1>Megenagna App Support</h1>
-  <p>If you need assistance, you can:</p>
-  <ul>
-    <li>Contact us at <strong>support@megenagna.com</strong></li>
-    <li>Use the <strong>Help Center</strong> in the app under your profile settings</li>
-  </ul>
-  <p>We’re here to help you have the best experience possible on Megenagna.</p>
+    <h1>Help & Support</h1>
+    <span class="last-updated">Last Updated: <span id="current-date"></span></span>
+
+    <div class="welcome-section">
+        <div class="welcome-icon">🤝</div>
+        <div class="welcome-title">We're Here to Help!</div>
+        <p>Find answers to common questions or contact our support team for assistance.</p>
+    </div>
+
+    <h2>Quick Actions</h2>
+    <div class="quick-actions">
+        <a href="mailto:support@megenagnadatingapp.com" class="quick-action-button">
+            <div class="action-icon">📧</div>
+            <div class="action-text">Contact Support</div>
+        </a>
+        <a href="#" id="app-store-link" class="quick-action-button">
+            <div class="action-icon">⭐</div>
+            <div class="action-text">Rate App</div>
+        </a>
+    </div>
+
+    <h2>Getting Started</h2>
+    
+    <div class="faq-item">
+        <div class="question">1. How do I create an account?</div>
+        <div class="answer">Download the app from the App Store or Google Play Store, open it, and follow the on-screen instructions to sign up with your email or social media accounts.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">2. How do I set up my profile?</div>
+        <div class="answer">After signing up, go to your profile section to add photos, write a bio, and set your preferences. A complete profile increases your matches!</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">3. How do I find matches?</div>
+        <div class="answer">Use the discovery feature to browse profiles. Swipe right to like someone or left to pass. You'll be notified when there's a mutual match.</div>
+    </div>
+
+    <h2>Account Management</h2>
+    
+    <div class="faq-item">
+        <div class="question">1. How do I reset my password?</div>
+        <div class="answer">Go to the login screen, tap "Forgot Password," enter your email, and follow the instructions sent to your inbox.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">2. How do I update my email address?</div>
+        <div class="answer">Go to Settings → Account → Email and follow the verification process to update your email address.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">3. How do I delete my account?</div>
+        <div class="answer">Go to Settings → Account → Delete Account. Please note this action is permanent and cannot be undone.</div>
+    </div>
+
+    <h2>Safety & Reporting</h2>
+    
+    <div class="faq-item">
+        <div class="question">1. How do I report a user?</div>
+        <div class="answer">Go to the user's profile, tap the three-dot menu, select "Report," and choose the reason for your report.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">2. How do I block someone?</div>
+        <div class="answer">Visit the user's profile, tap the three-dot menu, and select "Block User." Blocked users cannot contact you.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">3. What should I do if I feel unsafe?</div>
+        <div class="answer">Immediately stop communication, block the user, and report them to our safety team. Your safety is our priority.</div>
+    </div>
+
+    <h2>Subscription & Payments</h2>
+    
+    <div class="faq-item">
+        <div class="question">1. How do subscriptions work?</div>
+        <div class="answer">We offer various subscription plans (Daily, Weekly, Monthly, Quarterly) that provide premium features. Subscriptions automatically renew unless canceled.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">2. How do I cancel my subscription?</div>
+        <div class="answer">Go to Settings → Subscriptions → Manage Subscription. Cancellation must be done at least 24 hours before the renewal date.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">3. How do I request a refund?</div>
+        <div class="answer">Refund requests must be submitted through the app store where you made the purchase (Apple App Store or Google Play Store).</div>
+    </div>
+
+    <h2>Technical Support</h2>
+    
+    <div class="faq-item">
+        <div class="question">1. The app is crashing/not loading</div>
+        <div class="answer">
+            - Ensure you have the latest app version<br>
+            - Restart your device<br>
+            - Clear app cache/data<br>
+            - Reinstall the app
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">2. Notifications aren't working</div>
+        <div class="answer">
+            - Check app notification settings<br>
+            - Verify device notification permissions<br>
+            - Ensure you're logged in
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="question">3. Photos won't upload</div>
+        <div class="answer">
+            - Check your internet connection<br>
+            - Verify photo format (JPEG, PNG)<br>
+            - Ensure photo size is under 10MB
+        </div>
+    </div>
+
+    <h2>Safety Tips</h2>
+    <div class="tips-container">
+        <div class="tip-item">
+            <span class="tip-icon">🛡️</span>
+            <span class="tip-text">Never share personal information (address, financial details)</span>
+        </div>
+        <div class="tip-item">
+            <span class="tip-icon">👥</span>
+            <span class="tip-text">Always meet in public places for first dates</span>
+        </div>
+        <div class="tip-item">
+            <span class="tip-icon">🔔</span>
+            <span class="tip-text">Report suspicious behavior immediately</span>
+        </div>
+        <div class="tip-item">
+            <span class="tip-icon">🚗</span>
+            <span class="tip-text">Arrange your own transportation</span>
+        </div>
+    </div>
+
+    <h2>Legal</h2>
+    <div class="legal-links">
+        <a href="https://megenagna-app.github.io/megenagna-privacy-policy/privacy.html" class="legal-link">
+            <span class="legal-link-text">Privacy Policy</span>
+        </a>
+        <a href="https://megenagna-app.github.io/megenagna-privacy-policy/terms.html" class="legal-link">
+            <span class="legal-link-text">Terms of Service</span>
+        </a>
+        <a href="https://megenagnadatingapp.com/community-guidelines" class="legal-link">
+            <span class="legal-link-text">Community Guidelines</span>
+        </a>
+    </div>
+
+    <div class="contact-section">
+        <div class="contact-title">Still Need Help?</div>
+        <p class="answer">Our support team is available 24/7 to assist you with any issues or questions.</p>
+        <a href="mailto:support@megenagnadatingapp.com" class="contact-button">
+            <span class="button-icon">✉️</span>
+            Contact Support
+        </a>
+        <div class="response-time">We typically respond within 24 hours</div>
+    </div>
+
+    <div class="app-info">
+        <div class="app-info-text">Megenagna Dating App</div>
+        <div class="app-version">Version 1.0.0</div>
+        <div class="app-copyright">© <span id="current-year"></span> Megenagna. All rights reserved.</div>
+    </div>
+
+    <script>
+        // Auto-update the current date
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Detect device and set appropriate app store link
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        const appStoreLink = document.getElementById('app-store-link');
+        
+        if (/android/i.test(userAgent)) {
+            appStoreLink.href = 'https://play.google.com/store/apps/details?id=com.ios.Megenagna';
+        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            appStoreLink.href = 'https://apps.apple.com/app/megenagna-dating/idYOUR_APP_ID';
+        } else {
+            appStoreLink.href = 'https://megenagnadatingapp.com/download';
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
