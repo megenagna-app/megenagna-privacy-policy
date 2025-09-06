@@ -6,19 +6,24 @@
     <title>Megenagna Dating App - Privacy Policy</title>
     <style>
         :root {
-            --primary-color: #A02050;
+            --primary-color: #FF5864;
+            --primary-light: rgba(255, 88, 100, 0.1);
+            --primary-dark: #e04a55;
             --text-color: #333333;
+            --text-secondary: #666666;
             --bg-color: #ffffff;
             --border-color: #e0e0e0;
-            --highlight-bg: rgba(160, 32, 80, 0.1);
+            --highlight-bg: rgba(255, 88, 100, 0.08);
         }
         @media (prefers-color-scheme: dark) {
             :root {
-                --primary-color: #ff7597;
+                --primary-color: #FF5864;
+                --primary-light: rgba(255, 88, 100, 0.15);
                 --text-color: #f1f1f1;
+                --text-secondary: #aaaaaa;
                 --bg-color: #121212;
                 --border-color: #333333;
-                --highlight-bg: rgba(255, 117, 151, 0.1);
+                --highlight-bg: rgba(255, 88, 100, 0.12);
             }
         }
         body {
@@ -32,63 +37,74 @@
         }
         h1 {
             color: var(--primary-color);
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
+            font-weight: 700;
         }
         h2 {
             color: var(--primary-color);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-top: 2.5rem;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--primary-light);
+            font-weight: 600;
         }
         h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-top: 1.8rem;
+            color: var(--text-color);
+            font-weight: 600;
         }
         .last-updated {
-            color: #666;
+            color: var(--text-secondary);
             font-style: italic;
             margin-bottom: 2rem;
             display: block;
+            font-size: 1rem;
         }
         a {
             color: var(--primary-color);
             text-decoration: none;
             font-weight: 500;
+            transition: color 0.2s ease;
         }
         a:hover {
+            color: var(--primary-dark);
             text-decoration: underline;
         }
         ul, ol {
-            padding-left: 1.2rem;
+            padding-left: 1.5rem;
         }
         li {
             margin-bottom: 0.8rem;
+            line-height: 1.6;
         }
         strong {
             color: var(--primary-color);
+            font-weight: 600;
         }
         .highlight-box {
             background-color: var(--highlight-bg);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 25px 0;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
             border-left: 4px solid var(--primary-color);
         }
         .legal-footer {
             margin-top: 3rem;
-            padding-top: 1rem;
-            border-top: 1px solid var(--border-color);
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--border-color);
             font-size: 0.9rem;
-            color: #666;
+            color: var(--text-secondary);
+            text-align: center;
         }
         .facebook-deletion {
             background-color: var(--highlight-bg);
-            padding: 15px;
-            border-radius: 8px;
-            margin: 20px 0;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border: 1px solid var(--primary-light);
         }
         .section-number {
             background-color: var(--primary-color);
@@ -97,26 +113,55 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
             font-weight: bold;
+            font-size: 0.9rem;
         }
         .facebook-id-example {
-            background-color: rgba(0,0,0,0.05);
-            padding: 10px;
-            border-radius: 5px;
-            margin: 10px 0;
-            font-family: monospace;
+            background-color: var(--highlight-bg);
+            padding: 12px;
+            border-radius: 8px;
+            margin: 12px 0;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
         }
         .contact-method {
             display: flex;
             align-items: center;
-            margin: 10px 0;
+            margin: 12px 0;
+            padding: 8px 0;
         }
         .contact-icon {
-            margin-right: 10px;
+            margin-right: 12px;
             color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        code {
+            background-color: var(--highlight-bg);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+        }
+        p {
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+        }
+        .policy-summary {
+            background: linear-gradient(135deg, var(--highlight-bg) 0%, rgba(255, 88, 100, 0.05) 100%);
+            padding: 25px;
+            border-radius: 16px;
+            margin: 30px 0;
+            border: 1px solid var(--primary-light);
+        }
+        .policy-summary h3 {
+            color: var(--primary-color);
+            margin-top: 0;
         }
     </style>
 </head>
@@ -124,118 +169,155 @@
     <h1>Privacy Policy</h1>
     <span class="last-updated">Last Updated: <span id="current-date"></span></span>
 
-    <div class="highlight-box">
+    <div class="policy-summary">
+        <h3>🔒 Your Privacy Matters</h3>
         <p>This policy explains how Megenagna Dating App ("we", "us", or "our") collects, uses, and protects your personal information. By using our services, you agree to this policy.</p>
         <p><strong>Data Deletion URL:</strong> <a href="#" id="current-url">This page</a></p>
     </div>
 
-    <h2>1. Information We Collect</h2>
+    <h2><span class="section-number">1</span>Information We Collect</h2>
+    
     <h3>1.1 Personal Information</h3>
     <p>When you create an account, we collect:</p>
     <ul>
         <li><strong>Basic details:</strong> Name, email, phone number, date of birth</li>
         <li><strong>Profile information:</strong> Gender, sexual orientation, relationship preferences</li>
         <li><strong>User content:</strong> Profile photos, bio, messages to other users</li>
+        <li><strong>Preferences:</strong> Match criteria, notification settings, app customization</li>
     </ul>
 
     <h3>1.2 Technical Information</h3>
     <ul>
         <li><strong>Device data:</strong> Device type, operating system, unique device identifiers</li>
         <li><strong>Usage data:</strong> Features used, time spent, interactions with other users</li>
-        <li><strong>Location data:</strong> Precise GPS location (when enabled)</li>
+        <li><strong>Location data:</strong> Precise GPS location (when enabled, for matching purposes)</li>
+        <li><strong>Network information:</strong> IP address, connection type, carrier information</li>
     </ul>
 
-    <h2>2. How We Use Your Information</h2>
+    <h2><span class="section-number">2</span>How We Use Your Information</h2>
+    
     <h3>2.1 Core Services</h3>
     <ul>
         <li>Create and maintain your dating profile</li>
         <li>Show potential matches based on your preferences and location</li>
         <li>Enable messaging between matched users</li>
+        <li>Provide personalized dating recommendations</li>
     </ul>
 
     <h3>2.2 Service Improvement</h3>
     <ul>
-        <li>Analyze usage patterns to improve our algorithms</li>
-        <li>Develop new features based on user behavior</li>
-        <li>Monitor and prevent fraudulent activity</li>
+        <li>Analyze usage patterns to improve our matching algorithms</li>
+        <li>Develop new features based on user behavior and feedback</li>
+        <li>Monitor and prevent fraudulent activity and fake profiles</li>
+        <li>Conduct research to enhance user experience</li>
     </ul>
 
     <h3>2.3 Communications</h3>
     <ul>
-        <li>Send important service notifications</li>
-        <li>Provide customer support</li>
-        <li>Send promotional offers (you can opt-out)</li>
+        <li>Send important service notifications and updates</li>
+        <li>Provide customer support and respond to inquiries</li>
+        <li>Send promotional offers and dating tips (you can opt-out anytime)</li>
+        <li>Notify you of new matches and messages</li>
     </ul>
 
-    <h2>3. Data Sharing</h2>
+    <h2><span class="section-number">3</span>Data Sharing</h2>
+    
     <h3>3.1 With Other Users</h3>
-    <p>Your profile information (name, photos, bio) is visible to other users based on your privacy settings.</p>
+    <p>Your profile information (name, photos, bio, interests) is visible to other users based on your privacy settings and matching criteria.</p>
 
     <h3>3.2 With Service Providers</h3>
     <ul>
-        <li><strong>Cloud services:</strong> AWS for data storage</li>
-        <li><strong>Analytics:</strong> Firebase for usage statistics</li>
-        <li><strong>Payments:</strong> Stripe for subscription processing</li>
+        <li><strong>Cloud services:</strong> AWS for secure data storage and processing</li>
+        <li><strong>Analytics:</strong> Firebase for anonymous usage statistics and crash reporting</li>
+        <li><strong>Payments:</strong> Stripe for secure subscription processing</li>
+        <li><strong>Communication:</strong> Twilio for SMS verification and notifications</li>
     </ul>
 
     <h3>3.3 Legal Requirements</h3>
-    <p>We may disclose information when required by law or to protect our rights.</p>
+    <p>We may disclose information when required by law, to protect our rights, or in emergency situations where user safety is at risk.</p>
 
-    <h2>4. Data Security</h2>
+    <h2><span class="section-number">4</span>Data Security</h2>
     <ul>
-        <li>End-to-end encryption for all messages</li>
-        <li>Regular security audits and penetration testing</li>
-        <li>Limited employee access to user data</li>
-        <li>Two-factor authentication for staff accounts</li>
+        <li>End-to-end encryption for all private messages and sensitive data</li>
+        <li>Regular security audits and penetration testing by third-party experts</li>
+        <li>Limited employee access to user data with strict confidentiality agreements</li>
+        <li>Two-factor authentication for all staff accounts and sensitive operations</li>
+        <li>Automatic security updates and vulnerability patching</li>
     </ul>
 
-    <h2>5. Your Rights</h2>
+    <h2><span class="section-number">5</span>Your Rights</h2>
+    
     <h3>5.1 Access and Control</h3>
     <p>You can:</p>
     <ul>
-        <li>View and update your profile information in the app</li>
-        <li>Download your data through account settings</li>
-        <li>Delete your account permanently</li>
+        <li>View and update your profile information in the app settings</li>
+        <li>Download your complete data package through account settings</li>
+        <li>Delete your account permanently with immediate effect</li>
         <li><strong>Facebook-Specific Deletion:</strong> Users who registered via Facebook may request data deletion per Section 11</li>
     </ul>
 
     <h3>5.2 Communication Preferences</h3>
-    <p>Manage notification settings in your device or app settings.</p>
+    <p>Manage all notification settings in your device or app preferences. You have full control over:</p>
+    <ul>
+        <li>Push notifications for new matches and messages</li>
+        <li>Email marketing communications</li>
+        <li>SMS alerts and reminders</li>
+    </ul>
 
     <h3>5.3 Location Data</h3>
-    <p>Control location sharing through your device permissions.</p>
-
-    <h2>6. Data Retention</h2>
+    <p>Control location sharing through your device permissions. You can:</p>
     <ul>
-        <li><strong>Active accounts:</strong> Data retained until deletion</li>
+        <li>Enable/disable location services anytime</li>
+        <li>Set precise or approximate location sharing</li>
+        <li>Use the app without location services (with limited matching features)</li>
+    </ul>
+
+    <h2><span class="section-number">6</span>Data Retention</h2>
+    <ul>
+        <li><strong>Active accounts:</strong> Data retained until account deletion</li>
         <li><strong>Inactive accounts:</strong> Deleted after 24 months of inactivity</li>
         <li><strong>Messages:</strong> Deleted when either user deletes their account</li>
+        <li><strong>Photos:</strong> Removed from servers immediately after deletion</li>
         <li><strong>Facebook Data Deletion Requests:</strong> Fulfilled within 30 days regardless of account status</li>
     </ul>
 
-    <h2>7. International Transfers</h2>
-    <p>Your data may be transferred to and processed in countries outside your residence. We use standard contractual clauses for international data transfers.</p>
+    <h2><span class="section-number">7</span>International Transfers</h2>
+    <p>Your data may be transferred to and processed in countries outside your residence. We ensure protection through:</p>
+    <ul>
+        <li>Standard contractual clauses for international data transfers</li>
+        <li>Adequacy decisions where applicable</li>
+        <li>Same level of protection as required by your local laws</li>
+    </ul>
 
-    <h2>8. Children's Privacy</h2>
-    <p>Our services are not intended for users under 18. We do not knowingly collect data from children.</p>
+    <h2><span class="section-number">8</span>Children's Privacy</h2>
+    <p>Our services are strictly for users 18 years and older. We do not knowingly collect data from children and immediately delete any accounts found to be created by minors.</p>
 
-    <h2>9. Policy Updates</h2>
-    <p>We will notify users of significant changes through the app or email. Continued use after changes constitutes acceptance.</p>
+    <h2><span class="section-number">9</span>Policy Updates</h2>
+    <p>We will notify users of significant changes through:</p>
+    <ul>
+        <li>In-app notifications and banners</li>
+        <li>Email announcements for major updates</li>
+        <li>Updated "Last Updated" date on this page</li>
+    </ul>
+    <p>Continued use after changes constitutes acceptance of the updated policy.</p>
 
-    <h2>10. Contact Us</h2>
-    <p>For privacy concerns or data requests, please contact us through:</p>
+    <h2><span class="section-number">10</span>Contact Us</h2>
+    <p>For privacy concerns, data requests, or questions about this policy:</p>
     <div class="contact-method">
         <div class="contact-icon">📧</div>
-        <div>Email: privacy@megenagna.com</div>
+        <div><strong>Email:</strong> privacy@megenagna.com</div>
     </div>
     <div class="contact-method">
         <div class="contact-icon">📱</div>
-        <div>In-app Help Center</div>
+        <div><strong>In-app:</strong> Help Center → Privacy Support</div>
+    </div>
+    <div class="contact-method">
+        <div class="contact-icon">✉️</div>
+        <div><strong>Mail:</strong> Privacy Team, Megenagna Inc., 123 Dating Street, Addis Ababa, Ethiopia</div>
     </div>
     <p>For Facebook data deletion requests specifically, please follow instructions in Section 11.</p>
 
-    <!-- NEW SECTION: Facebook Data Deletion Instructions -->
-    <h2>11. Facebook Data Deletion Instructions</h2>
+    <h2><span class="section-number">11</span>Facebook Data Deletion Instructions</h2>
     <div class="facebook-deletion">
         <p>If you registered using Facebook Login and wish to delete your data:</p>
         
@@ -246,14 +328,16 @@
             <li>Example Facebook ID format:
                 <div class="facebook-id-example">https://www.facebook.com/profile.php?id=<strong>YOUR_FACEBOOK_ID</strong></div>
             </li>
+            <li>Include the email address associated with your account</li>
         </ul>
         
         <h3>What we delete:</h3>
         <ul>
             <li>All personal data collected via Facebook Login</li>
-            <li>Profile information</li>
+            <li>Profile information and preferences</li>
             <li>Usage data linked to your Facebook ID</li>
-            <li>Connection history</li>
+            <li>Connection history and match data</li>
+            <li>Message history and media files</li>
         </ul>
         
         <h3>Processing timeline:</h3>
@@ -261,19 +345,22 @@
             <li>Requests processed within <strong>30 days</strong></li>
             <li>Confirmation email sent upon completion</li>
             <li>Backup data permanently erased within 90 days</li>
+            <li>No recovery possible after deletion</li>
         </ul>
         
         <h3>Alternative methods:</h3>
         <ul>
             <li>Delete your entire account in-app: <br>
-                <code>Profile → Settings → Delete Account</code>
+                <code>Profile → Settings → Account → Delete Account</code>
             </li>
+            <li>Use the automatic deletion tool in our help center</li>
         </ul>
     </div>
 
     <div class="legal-footer">
         <p>© 2025 Megenagna Dating App. All rights reserved.</p>
         <p>This policy is effective as of the "Last Updated" date above.</p>
+        <p>Megenagna Inc. • Addis Ababa, Ethiopia</p>
     </div>
 
     <script>
@@ -288,17 +375,18 @@
         document.getElementById('current-url').textContent = window.location.href;
         document.getElementById('current-url').href = window.location.href;
         
-        // Highlight current section in TOC
-        document.querySelectorAll('h2[id]').forEach(section => {
-            section.onclick = () => {
-                document.querySelectorAll('h2').forEach(h => h.style.borderLeft = 'none');
-                section.style.borderLeft = `4px solid ${getComputedStyle(document.documentElement).getPropertyValue('--primary-color')}`;
-                section.style.paddingLeft = '10px';
-                setTimeout(() => {
-                    section.style.borderLeft = 'none';
-                    section.style.paddingLeft = '0';
-                }, 2000);
-            };
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
         });
     </script>
 </body>
