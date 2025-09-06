@@ -1,1 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Megenagna Dating App - Terms of Service</title>
+    <style>
+        :root {
+            --primary-color: #FF5864;
+            --primary-light: rgba(255, 88, 100, 0.1);
+            --primary-dark: #e04a55;
+            --text-color: #333333;
+            --text-secondary: #666666;
+            --bg-color: #ffffff;
+            --border-color: #e0e0e0;
+            --highlight-bg: rgba(255, 88, 100, 0.08);
+            --warning-bg: rgba(255, 152, 0, 0.1);
+            --success-bg: rgba(76, 175, 80, 0.1);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #FF5864;
+                --primary-light: rgba(255, 88, 100, 0.15);
+                --text-color: #f1f1f1;
+                --text-secondary: #aaaaaa;
+                --bg-color: #121212;
+                --border-color: #333333;
+                --highlight-bg: rgba(255, 88, 100, 0.12);
+                --warning-bg: rgba(255, 152, 0, 0.15);
+                --success-bg: rgba(76, 175, 80, 0.15);
+            }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-light);
+            font-weight: 600;
+        }
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 1.8rem;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+        h4 {
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .last-updated {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 2rem;
+            display: block;
+            font-size: 1rem;
+            text-align: center;
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+        strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .highlight-box {
+            background-color: var(--highlight-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px 0;
+            border-left: 4px solid var(--primary-color);
+        }
+        .warning-box {
+            background-color: var(--warning-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 4px solid #ff9800;
+        }
+        .success-box {
+            background-color: var(--success-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 4px solid #4caf50;
+        }
+        .legal-footer {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 2px solid var(--border-color);
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-align: center;
+        }
+        .section-number {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .contact-method {
+            display: flex;
+            align-items: center;
+            margin: 12px 0;
+            padding: 8px 0;
+        }
+        .contact-icon {
+            margin-right: 12px;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+        }
+        code {
+            background-color: var(--highlight-bg);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            border: 1px solid var(--border-color);
+        }
+        p {
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+        }
+        .terms-summary {
+            background: linear-gradient(135deg, var(--highlight-bg) 0%, rgba(255, 88, 100, 0.05) 100%);
+            padding: 25px;
+            border-radius: 16px;
+            margin: 30px 0;
+            border: 1px solid var(--primary-light);
+        }
+        .terms-summary h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        .prohibited-list {
+            background-color: var(--warning-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .prohibited-list li {
+            margin-bottom: 0.5rem;
+        }
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .table th, .table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .table th {
+            background-color: var(--highlight-bg);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <h1>Terms of Service</h1>
+    <span class="last-updated">Last Updated: <span id="current-date"></span></span>
 
+    <div class="terms-summary">
+        <h3>📋 Agreement Overview</h3>
+        <p>Welcome to Megenagna Dating App! These Terms of Service ("Terms") govern your use of our dating application and services. By creating an account or using our services, you agree to be bound by these Terms and our Privacy Policy.</p>
+        <p><strong>Key Points:</strong> You must be 18+ to use our app, you're responsible for your interactions, and we reserve the right to remove content that violates our guidelines.</p>
+    </div>
+
+    <h2><span class="section-number">1</span>Acceptance of Terms</h2>
+    <p>By accessing or using the Megenagna Dating App ("Service"), you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this Service.</p>
+
+    <h2><span class="section-number">2</span>Eligibility Requirements</h2>
+    <h3>2.1 Age Requirement</h3>
+    <p>You must be at least 18 years old to use our Service. By using Megenagna, you represent and warrant that you are at least 18 years of age.</p>
+
+    <h3>2.2 Legal Capacity</h3>
+    <p>You must have the legal capacity to enter into binding contracts in your jurisdiction. If you are using the Service on behalf of an entity, you represent that you have the authority to bind that entity to these Terms.</p>
+
+    <h3>2.3 Single Account</h3>
+    <p>You may maintain only one account at a time. Creating multiple accounts may result in termination of all your accounts.</p>
+
+    <h2><span class="section-number">3</span>Account Creation and Security</h2>
+    <h3>3.1 Accurate Information</h3>
+    <p>You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete.</p>
+
+    <h3>3.2 Account Security</h3>
+    <p>You are responsible for safeguarding your account password and for any activities or actions under your account. You agree to notify us immediately of any unauthorized use of your account.</p>
+
+    <h3>3.3 Profile Authenticity</h3>
+    <p>Your profile must truthfully represent yourself. Prohibited practices include:</p>
+    <ul>
+        <li>Using photos that are not of yourself</li>
+        <li>Providing false personal information</li>
+        <li>Creating accounts for other people</li>
+        <li>Misrepresenting your age, appearance, or intentions</li>
+    </ul>
+
+    <h2><span class="section-number">4</span>User Conduct and Community Guidelines</h2>
+    
+    <div class="warning-box">
+        <h3>🚫 Zero Tolerance Policy</h3>
+        <p>We have a zero-tolerance policy for objectionable content and abusive behavior. Violations may result in immediate account termination.</p>
+    </div>
+
+    <h3>4.1 Prohibited Content</h3>
+    <div class="prohibited-list">
+        <ul>
+            <li><strong>Nudity or sexual content:</strong> No explicit photos or sexually suggestive content</li>
+            <li><strong>Hate speech:</strong> No content that promotes violence or hatred against individuals or groups</li>
+            <li><strong>Harassment:</strong> No bullying, threats, or unwanted sexual advances</li>
+            <li><strong>Illegal activities:</strong> No content that promotes illegal activities</li>
+            <li><strong>Spam:</strong> No unsolicited commercial content</li>
+            <li><strong>Violence:</strong> No violent, graphic, or gory content</li>
+            <li><strong>Private information:</strong> No sharing of others' private information</li>
+        </ul>
+    </div>
+
+    <h3>4.2 Expected Behavior</h3>
+    <ul>
+        <li>Treat all users with respect and dignity</li>
+        <li>Be honest in your interactions</li>
+        <li>Respect boundaries and consent</li>
+        <li>Report suspicious or inappropriate behavior</li>
+        <li>Use the blocking feature when necessary</li>
+    </ul>
+
+    <h2><span class="section-number">5</span>Subscription and Payments</h2>
+    <h3>5.1 Subscription Types</h3>
+    <p>We offer various subscription plans with different durations and features. All prices are clearly displayed before purchase.</p>
+
+    <h3>5.2 Automatic Renewal</h3>
+    <p>Subscriptions automatically renew unless auto-renew is turned off at least 24 hours before the end of the current period.</p>
+
+    <h3>5.3 Cancellation</h3>
+    <p>You may cancel your subscription at any time through your device's app store settings. Cancellation will take effect at the end of the current billing cycle.</p>
+
+    <h3>5.4 Refund Policy</h3>
+    <p>All sales are final. Refunds are only provided where required by law. Subscription fees are non-refundable except as required by law.</p>
+
+    <h2><span class="section-number">6</span>Intellectual Property Rights</h2>
+    <h3>6.1 Our Content</h3>
+    <p>The Service and its original content, features, and functionality are owned by Megenagna and are protected by international copyright, trademark, and other intellectual property laws.</p>
+
+    <h3>6.2 Your Content</h3>
+    <p>You retain all rights to the content you submit, post, or display on or through the Service. By submitting content, you grant us a worldwide, non-exclusive, royalty-free license to use, reproduce, and display such content.</p>
+
+    <h3>6.3 License to Use</h3>
+    <p>We grant you a limited, non-exclusive, non-transferable license to use the Service for personal, non-commercial purposes.</p>
+
+    <h2><span class="section-number">7</span>Privacy and Data Protection</h2>
+    <p>Your privacy is important to us. Our Privacy Policy explains how we collect, use, and protect your personal information. By using our Service, you agree to the collection and use of information in accordance with our Privacy Policy.</p>
+
+    <h2><span class="section-number">8</span>User-Generated Content</h2>
+    <h3>8.1 Content Responsibility</h3>
+    <p>You are solely responsible for the content you post on Megenagna. You agree not to post content that:</p>
+    <ul>
+        <li>Violates any third-party rights</li>
+        <li>Is illegal, offensive, or inappropriate</li>
+        <li>Contains malware or viruses</li>
+        <li>Attempts to circumvent our security measures</li>
+    </ul>
+
+    <h3>8.2 Content Moderation</h3>
+    <p>We reserve the right to remove any content that violates these Terms without prior notice. We may also suspend or terminate accounts for repeated violations.</p>
+
+    <h2><span class="section-number">9</span>Termination and Account Deletion</h2>
+    <h3>9.1 By You</h3>
+    <p>You may delete your account at any time through the app settings. Account deletion is permanent and cannot be undone.</p>
+
+    <h3>9.2 By Us</h3>
+    <p>We may suspend or terminate your account if you violate these Terms. We reserve the right to terminate accounts for any reason at our sole discretion.</p>
+
+    <h3>9.3 Effects of Termination</h3>
+    <p>Upon termination, your right to use the Service will immediately cease. All provisions of these Terms which should survive termination shall survive.</p>
+
+    <h2><span class="section-number">10</span>Limitation of Liability</h2>
+    <div class="highlight-box">
+        <p><strong>Important:</strong> To the maximum extent permitted by law, Megenagna shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use of the Service.</p>
+    </div>
+
+    <h3>10.1 No Guarantee of Results</h3>
+    <p>We do not guarantee that you will find matches, meet people, or form relationships through our Service.</p>
+
+    <h3>10.2 User Interactions</h3>
+    <p>You are solely responsible for your interactions with other users. We are not responsible for the conduct of any user.</p>
+
+    <h2><span class="section-number">11</span>Disclaimer of Warranties</h2>
+    <p>The Service is provided on an "AS IS" and "AS AVAILABLE" basis. Megenagna makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+
+    <h2><span class="section-number">12</span>Indemnification</h2>
+    <p>You agree to indemnify and hold harmless Megenagna and its affiliates from any claims, damages, losses, liabilities, and expenses arising from your use of the Service or violation of these Terms.</p>
+
+    <h2><span class="section-number">13</span>Changes to Terms</h2>
+    <p>We reserve the right to modify these Terms at any time. We will provide notice of significant changes through the Service or by email. Your continued use of the Service after changes constitutes acceptance of the new Terms.</p>
+
+    <h2><span class="section-number">14</span>Governing Law</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of Ethiopia, without regard to its conflict of law provisions.</p>
+
+    <h2><span class="section-number">15</span>Dispute Resolution</h2>
+    <h3>15.1 Informal Resolution</h3>
+    <p>We prefer to resolve disputes informally. Please contact us at legal@megenagna.com before initiating formal proceedings.</p>
+
+    <h3>15.2 Binding Arbitration</h3>
+    <p>Any disputes shall be resolved through binding arbitration in Addis Ababa, Ethiopia, rather than in court.</p>
+
+    <h2><span class="section-number">16</span>Contact Information</h2>
+    <p>For questions about these Terms, please contact us:</p>
+    <div class="contact-method">
+        <div class="contact-icon">📧</div>
+        <div><strong>Email:</strong> legal@megenagna.com</div>
+    </div>
+    <div class="contact-method">
+        <div class="contact-icon">📱</div>
+        <div><strong>In-app:</strong> Help Center → Legal Support</div>
+    </div>
+    <div class="contact-method">
+        <div class="contact-icon">✉️</div>
+        <div><strong>Mail:</strong> Legal Department, Megenagna Inc., 123 Dating Street, Addis Ababa, Ethiopia</div>
+    </div>
+
+    <div class="success-box">
+        <h3>✅ Safe Dating Practices</h3>
+        <p>Remember to always prioritize your safety when meeting people from dating apps:</p>
+        <ul>
+            <li>Meet in public places for first dates</li>
+            <li>Tell a friend about your plans</li>
+            <li>Keep personal information private initially</li>
+            <li>Trust your instincts</li>
+            <li>Report suspicious behavior to us immediately</li>
+        </ul>
+    </div>
+
+    <div class="legal-footer">
+        <p>© 2025 Megenagna Dating App. All rights reserved.</p>
+        <p>This agreement is effective as of the "Last Updated" date above.</p>
+        <p>Megenagna Inc. • Addis Ababa, Ethiopia</p>
+    </div>
+
+    <script>
+        // Auto-update the current date
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
