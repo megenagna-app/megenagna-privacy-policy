@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Megenagna Dating App - Community Guidelines</title>
+    <style>
+        :root {
+            --primary-color: #FF5864;
+            --primary-light: rgba(255, 88, 100, 0.1);
+            --primary-dark: #e04a55;
+            --text-color: #333333;
+            --text-secondary: #666666;
+            --bg-color: #ffffff;
+            --card-bg: #f8f9fa;
+            --border-color: #e0e0e0;
+            --highlight-bg: rgba(255, 88, 100, 0.08);
+            --success-bg: rgba(76, 175, 80, 0.1);
+            --warning-bg: rgba(255, 152, 0, 0.1);
+            --error-bg: rgba(244, 67, 54, 0.1);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #FF5864;
+                --primary-light: rgba(255, 88, 100, 0.15);
+                --text-color: #f1f1f1;
+                --text-secondary: #aaaaaa;
+                --bg-color: #121212;
+                --card-bg: #1e1e1e;
+                --border-color: #333333;
+                --highlight-bg: rgba(255, 88, 100, 0.12);
+                --success-bg: rgba(76, 175, 80, 0.15);
+                --warning-bg: rgba(255, 152, 0, 0.15);
+                --error-bg: rgba(244, 67, 54, 0.15);
+            }
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, sans-serif;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+        h1 {
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-light);
+            font-weight: 600;
+        }
+        h3 {
+            font-size: 1.3rem;
+            margin-top: 1.8rem;
+            color: var(--text-color);
+            font-weight: 600;
+        }
+        .last-updated {
+            color: var(--text-secondary);
+            font-style: italic;
+            margin-bottom: 2rem;
+            display: block;
+            font-size: 1rem;
+            text-align: center;
+        }
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+        li {
+            margin-bottom: 0.8rem;
+            line-height: 1.6;
+        }
+        strong {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .guidelines-header {
+            background: linear-gradient(135deg, var(--highlight-bg) 0%, rgba(255, 88, 100, 0.05) 100%);
+            padding: 30px;
+            border-radius: 16px;
+            margin: 30px 0;
+            text-align: center;
+            border: 1px solid var(--primary-light);
+        }
+        .header-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        .header-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .guideline-card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border-color);
+        }
+        .guideline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .guideline-icon {
+            margin-right: 10px;
+            font-size: 1.4rem;
+        }
+        .guideline-content {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .prohibited-list {
+            background-color: var(--error-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid #f44336;
+        }
+        .prohibited-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        .prohibited-icon {
+            margin-right: 12px;
+            color: #f44336;
+            font-size: 1.1rem;
+            min-width: 24px;
+        }
+        .recommended-list {
+            background-color: var(--success-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 4px solid #4caf50;
+        }
+        .recommended-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+        .recommended-icon {
+            margin-right: 12px;
+            color: #4caf50;
+            font-size: 1.1rem;
+            min-width: 24px;
+        }
+        .warning-box {
+            background-color: var(--warning-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 25px 0;
+            border-left: 4px solid #ff9800;
+        }
+        .consequences-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 25px 0;
+        }
+        .consequence-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        .consequence-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        .consequence-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        .reporting-section {
+            background: linear-gradient(135deg, var(--highlight-bg) 0%, rgba(255, 88, 100, 0.08) 100%);
+            padding: 30px;
+            border-radius: 16px;
+            margin: 30px 0;
+        }
+        .reporting-steps {
+            margin: 20px 0;
+        }
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+        }
+        .step-number {
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        .legal-links {
+            margin: 30px 0;
+        }
+        .legal-link {
+            display: block;
+            padding: 15px;
+            border-bottom: 1px solid var(--border-color);
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+        .legal-link:hover {
+            background-color: var(--highlight-bg);
+        }
+        .legal-link-text {
+            font-size: 1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        .app-info {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+        }
+        .app-info-text {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .app-version {
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .app-copyright {
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Community Guidelines</h1>
+    <span class="last-updated">Last Updated: <span id="current-date"></span></span>
+
+    <div class="guidelines-header">
+        <div class="header-icon">🤝</div>
+        <div class="header-title">Building a Safe & Respectful Community</div>
+        <p>These guidelines help ensure Megenagna remains a welcoming space for everyone to make genuine connections.</p>
+    </div>
+
+    <h2>Our Commitment to Safety</h2>
+    <p>At Megenagna, we're committed to creating a safe, inclusive, and respectful environment for all our members. These guidelines outline our expectations for user behavior and help maintain the quality of our community.</p>
+
+    <div class="guideline-card">
+        <div class="guideline-title">
+            <span class="guideline-icon">✅</span> Be Respectful & Kind
+        </div>
+        <div class="guideline-content">
+            Treat all members with dignity and respect. Everyone deserves to feel safe and valued in our community.
+        </div>
+    </div>
+
+    <div class="guideline-card">
+        <div class="guideline-title">
+            <span class="guideline-icon">✅</span> Be Authentic
+        </div>
+        <div class="guideline-content">
+            Use recent photos of yourself and provide accurate information in your profile. Authenticity builds trust and better connections.
+        </div>
+    </div>
+
+    <div class="guideline-card">
+        <div class="guideline-title">
+            <span class="guideline-icon">✅</span> Respect Boundaries
+        </div>
+        <div class="guideline-content">
+            Always respect others' boundaries and consent. No means no, both online and offline.
+        </div>
+    </div>
+
+    <h2>Zero Tolerance Policy</h2>
+    <p>The following behaviors are strictly prohibited and will result in immediate account termination:</p>
+
+    <div class="prohibited-list">
+        <div class="prohibited-item">
+            <span class="prohibited-icon">❌</span>
+            <span><strong>Harassment:</strong> Bullying, threats, or unwanted sexual advances</span>
+        </div>
+        <div class="prohibited-item">
+            <span class="prohibited-icon">❌</span>
+            <span><strong>Hate Speech:</strong> Content that promotes violence or hatred against individuals or groups</span>
+        </div>
+        <div class="prohibited-item">
+            <span class="prohibited-icon">❌</span>
+            <span><strong>Explicit Content:</strong> Nudity, pornography, or sexually explicit material</span>
+        </div>
+        <div class="prohibited-item">
+            <span class="prohibited-icon">❌</span>
+            <span><strong>Violence:</strong> Violent, graphic, or gory content</span>
+        </div>
+        <div class="prohibited-item">
+            <span class="prohibited-icon">❌</span>
+            <span><strong>Spam:</strong> Unsolicited commercial content or scams</span>
+        </div>
+        <div class="prohibited-item">
+            <span class="prohibited-icon">❌</span>
+            <span><strong>Illegal Activities:</strong> Content that promotes illegal activities</span>
+        </div>
+        <div class="prohibited-item">
+            <span class="prohibited-icon">❌</span>
+            <span><strong>Impersonation:</strong> Creating fake profiles or impersonating others</span>
+        </div>
+        <div class="prohibited-item">
+            <span class="prohibited-icon">❌</span>
+            <span><strong>Minors:</strong> Users must be 18+ - no exceptions</span>
+        </div>
+    </div>
+
+    <h2>Recommended Behavior</h2>
+    <div class="recommended-list">
+        <div class="recommended-item">
+            <span class="recommended-icon">👍</span>
+            <span><strong>Be genuine</strong> in your interactions and profile</span>
+        </div>
+        <div class="recommended-item">
+            <span class="recommended-icon">👍</span>
+            <span><strong>Respect differences</strong> in opinions, backgrounds, and preferences</span>
+        </div>
+        <div class="recommended-item">
+            <span class="recommended-icon">👍</span>
+            <span><strong>Communicate clearly</strong> about your intentions and boundaries</span>
+        </div>
+        <div class="recommended-item">
+            <span class="recommended-icon">👍</span>
+            <span><strong>Report suspicious behavior</strong> to help keep the community safe</span>
+        </div>
+        <div class="recommended-item">
+            <span class="recommended-icon">👍</span>
+            <span><strong>Use the block feature</strong> when needed to manage your interactions</span>
+        </div>
+    </div>
+
+    <h2>Safety Tips for Dating</h2>
+    <div class="warning-box">
+        <strong>⚠️ Important Safety Information:</strong> Your safety is our top priority. Always prioritize your well-being when meeting people from dating apps.
+    </div>
+
+    <div class="consequences-grid">
+        <div class="consequence-card">
+            <div class="consequence-icon">🏠</div>
+            <div class="consequence-title">Meet in Public</div>
+            <div class="guideline-content">Always choose public places for first meetings</div>
+        </div>
+        <div class="consequence-card">
+            <div class="consequence-icon">📱</div>
+            <div class="consequence-title">Inform Friends</div>
+            <div class="guideline-content">Tell someone about your plans and location</div>
+        </div>
+        <div class="consequence-card">
+            <div class="consequence-icon">🚗</div>
+            <div class="consequence-title">Transportation</div>
+            <div class="guideline-content">Arrange your own transportation</div>
+        </div>
+        <div class="consequence-card">
+            <div class="consequence-icon">🔒</div>
+            <div class="consequence-title">Personal Info</div>
+            <div class="guideline-content">Keep personal information private initially</div>
+        </div>
+    </div>
+
+    <h2>Consequences for Violations</h2>
+    <p>Violations of these guidelines may result in:</p>
+    <ul>
+        <li><strong>Content Removal:</strong> Immediate removal of violating content</li>
+        <li><strong>Warning:</strong> Formal warning for minor violations</li>
+        <li><strong>Temporary Suspension:</strong> Account suspension for repeated violations</li>
+        <li><strong>Permanent Ban:</strong> Immediate account termination for severe violations</li>
+        <li><strong>Legal Action:</strong> Cooperation with law enforcement for illegal activities</li>
+    </ul>
+
+    <h2>How to Report Violations</h2>
+    <div class="reporting-section">
+        <h3>Reporting Process</h3>
+        <div class="reporting-steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div>Go to the user's profile you want to report</div>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>Tap the three-dot menu in the top right corner</div>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>Select "Report" from the menu</div>
+            </div>
+            <div class="step">
+                <div class="step-number">4</div>
+                <div>Choose the reason for your report</div>
+            </div>
+            <div class="step">
+                <div class="step-number">5</div>
+                <div>Provide any additional details and submit</div>
+            </div>
+        </div>
+        <p><strong>Emergency Situations:</strong> If you're in immediate danger, contact local emergency services first.</p>
+    </div>
+
+    <h2>Related Documents</h2>
+    <div class="legal-links">
+        <a href="https://megenagna-app.github.io/megenagna-privacy-policy/privacy.html" class="legal-link">
+            <span class="legal-link-text">Privacy Policy</span>
+        </a>
+        <a href="https://megenagna-app.github.io/megenagna-privacy-policy/terms.html" class="legal-link">
+            <span class="legal-link-text">Terms of Service</span>
+        </a>
+        <a href="https://megenagna-app.github.io/megenagna-privacy-policy/support.html" class="legal-link">
+            <span class="legal-link-text">Help & Support</span>
+        </a>
+    </div>
+
+    <div class="app-info">
+        <div class="app-info-text">Megenagna Dating App</div>
+        <div class="app-version">Version 1.0.0</div>
+        <div class="app-copyright">© <span id="current-year"></span> Megenagna. All rights reserved.</div>
+    </div>
+
+    <script>
+        // Auto-update the current date
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
